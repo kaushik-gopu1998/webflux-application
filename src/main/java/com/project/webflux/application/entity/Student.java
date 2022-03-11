@@ -9,12 +9,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Document(collection="student")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@ToString(exclude= {"dateOfBirth"})
 public class Student {
 	@Id
 	Integer pin;
@@ -25,4 +26,6 @@ public class Student {
 	String course;
 	Instant yearOfJoining;
 	Boolean isActive;
+	
+	
 }
